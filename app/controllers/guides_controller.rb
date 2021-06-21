@@ -4,6 +4,7 @@ class GuidesController < ApplicationController
   # GET /guides or /guides.json
   def index
     @guides = Guide.all
+    @aws_key = Rails.application.credentials.production[:aws][:access_key_id]
   end
 
   # GET /guides/1 or /guides/1.json
